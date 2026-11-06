@@ -1,0 +1,10 @@
+{
+  "name": "claude-net-doctor",
+  "version": "0.1.0",
+  "description": "Diagnose and configure Claude Code network settings: HTTP(S) proxy, custom CA certificates, mTLS, firewall allowlists and streaming timeouts.",
+  "author": { "name": "v-ai-laboratory", "url": "https://github.com/v-ai-laboratory" },
+  "homepage": "https://github.com/v-ai-laboratory/claude-net-doctor",
+  "repository": "https://github.com/v-ai-laboratory/claude-net-doctor",
+  "license": "MIT",
+  "keywords": ["proxy", "mtls", "certificates", "network", "enterprise", "troubleshooting"]
+}
