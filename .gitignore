@@ -1,0 +1,8 @@
+# Local agent memory, never part of the plugin
+.graymatter/
+
+# OS and editor noise
+.DS_Store
+*.swp
+.idea/
+.vscode/

@@ -1,0 +1,17 @@
+{
+  "name": "v-ai-laboratory",
+  "description": "Claude Code plugins from v-ai-laboratory",
+  "owner": {
+    "name": "v-ai-laboratory",
+    "url": "https://github.com/v-ai-laboratory"
+  },
+  "plugins": [
+    {
+      "name": "claude-net-doctor",
+      "source": "./",
+      "description": "Diagnose and fix Claude Code network settings: proxy, custom CA certificates, mTLS, allowlists and stream timeouts.",
+      "category": "development",
+      "tags": ["network", "proxy", "tls", "mtls", "diagnostics", "enterprise"]
+    }
+  ]
+}

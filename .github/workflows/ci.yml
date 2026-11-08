@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ShellCheck
+        if: runner.os == 'Linux'
+        run: shellcheck scripts/check-env.sh tests/check-env.test.sh
+
+      - name: Functional tests
+        run: bash tests/check-env.test.sh
+
+      - name: Validate JSON manifests
+        run: python3 -c "import json,sys; [json.load(open(p)) for p in sys.argv[1:]]" .claude-plugin/plugin.json .claude-plugin/marketplace.json

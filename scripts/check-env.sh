@@ -133,15 +133,16 @@ if [ "$DO_NET" = 1 ]; then
   if ! command -v curl >/dev/null 2>&1; then
     warn "curl not found; skipping reachability test"
   else
+    ERR="$(mktemp)"
+    trap 'rm -f "$ERR"' EXIT
     for h in api.anthropic.com claude.ai platform.claude.com downloads.claude.ai github.com registry.npmjs.org; do
-      code="$(curl -sS -o /dev/null -m 10 -w '%{http_code}' "https://$h" 2>/tmp/net-doctor.err || true)"
+      code="$(curl -sS -o /dev/null -m 10 -w '%{http_code}' "https://$h" 2>"$ERR" || true)"
       if [ -n "$code" ] && [ "$code" != "000" ]; then
         pass "$h reachable (HTTP $code)"
       else
-        bad "$h unreachable: $(head -c 120 /tmp/net-doctor.err 2>/dev/null | tr '\n' ' ')"
+        bad "$h unreachable: $(head -c 120 "$ERR" 2>/dev/null | tr '\n' ' ')"
       fi
     done
-    rm -f /tmp/net-doctor.err
   fi
 fi
 
