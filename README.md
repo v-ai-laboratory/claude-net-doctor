@@ -1,5 +1,7 @@
 # claude-net-doctor
 
+[![CI](https://github.com/v-ai-laboratory/claude-net-doctor/actions/workflows/ci.yml/badge.svg)](https://github.com/v-ai-laboratory/claude-net-doctor/actions/workflows/ci.yml)
+
 A Claude Code plugin that finds and fixes network problems: HTTP(S) proxies, `NO_PROXY`, custom CA certificates, TLS-inspection appliances, mTLS client certificates, firewall allowlists, and streaming timeouts.
 
 It runs a local checker, explains every failure in plain language, and hands back the exact variable and value to change. No MCP servers, no telemetry, no network requests unless you ask for them.
