@@ -1,6 +1,6 @@
 {
-  "name": "claude-net-doctor",
-  "displayName": "Claude Net Doctor",
+  "name": "net-doctor",
+  "displayName": "Net Doctor",
   "version": "0.1.0",
   "description": "Diagnose and configure Claude Code network settings: HTTP(S) proxy, custom CA certificates, mTLS, firewall allowlists and streaming timeouts.",
   "author": { "name": "v-ai-laboratory", "url": "https://github.com/v-ai-laboratory" },

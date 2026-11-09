@@ -7,7 +7,7 @@
   },
   "plugins": [
     {
-      "name": "claude-net-doctor",
+      "name": "net-doctor",
       "source": "./",
       "description": "Diagnose and fix Claude Code network settings: proxy, custom CA certificates, mTLS, allowlists and stream timeouts.",
       "category": "development",

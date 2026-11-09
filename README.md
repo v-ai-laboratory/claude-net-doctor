@@ -12,14 +12,14 @@ Add the marketplace once, then install the plugin:
 
 ```bash
 claude plugin marketplace add v-ai-laboratory/claude-net-doctor
-claude plugin install claude-net-doctor@v-ai-laboratory
+claude plugin install net-doctor@v-ai-laboratory
 ```
 
 Or from inside a session:
 
 ```text
 /plugin marketplace add v-ai-laboratory/claude-net-doctor
-/plugin install claude-net-doctor@v-ai-laboratory
+/plugin install net-doctor@v-ai-laboratory
 ```
 
 To try a local checkout without installing:
@@ -32,7 +32,7 @@ claude --plugin-dir ./claude-net-doctor
 ## Use
 
 ```text
-/claude-net-doctor:net-check
+/net-doctor:net-check
 ```
 
 The checker reads the shell environment and the `env` block of `~/.claude/settings.json`, then reports every setting as `OK`, `INFO`, `WARN`, or `FAIL`. Claude reads the output with the bundled `network-diagnostics` skill, so each warning comes with the cause and the fix.
@@ -40,7 +40,7 @@ The checker reads the shell environment and the `env` block of `~/.claude/settin
 Add `--net` to also test reachability of the hosts Claude Code needs:
 
 ```text
-/claude-net-doctor:net-check --net
+/net-doctor:net-check --net
 ```
 
 Without `--net` nothing leaves the machine.
@@ -83,7 +83,7 @@ Summary: 2 ok, 1 warnings, 1 failures
 | Path | Purpose |
 | - | - |
 | `skills/network-diagnostics/` | Symptom-to-cause table, setup rules, verification steps, host allowlist, timeout variables |
-| `commands/net-check.md` | `/claude-net-doctor:net-check` command |
+| `commands/net-check.md` | `/net-doctor:net-check` command |
 | `scripts/check-env.sh` | The checker: offline by default, `--net` for reachability |
 | `.claude-plugin/marketplace.json` | Makes this repository installable as a marketplace |
 | `tests/check-env.test.sh` | Functional tests for the checker |
